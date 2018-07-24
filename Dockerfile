@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM jenkinsci/blueocean:1.7.1
 
 USER root
 RUN apt-get update \
@@ -6,7 +6,6 @@ RUN apt-get update \
       && apt-get install -y sudo libltdl-dev \
       && rm -rf /var/lib/apt/lists/*
 	  
-RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 USER jenkins
 # Here you can install some Jenkins plugins if you want
